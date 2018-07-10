@@ -1,0 +1,23 @@
+<h2>User Feedback</h2>
+
+<label>
+  Your Name:
+  <!-- ngModel [()] connects inputs in the HTML to PROPERTIES in TS
+      <tag [(ngModel)]="variable"></tag> -->
+  <input type="text" [(ngModel)]="messageItem.user" placeholder="Wanda Maximoff" />
+</label>
+
+<div *ngIf="messageItem.user">
+  <p>Hello, {{messageItem.user}}!</p>
+
+  <p *ngIf="feedbackMessage">{{feedbackMessage}}</p>
+
+  <label>
+    What would you like to say?
+    <textarea [(ngModel)]="messageItem.comment" placeholder="Blah blah blah..."></textarea>
+  </label>
+
+  <div *ngIf="messageItem.comment && messageItem.comment.length >= 10">
+    <button (click)="showFeedback()">Submit</button>
+  </div>
+</div>
