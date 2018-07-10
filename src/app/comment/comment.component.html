@@ -17,6 +17,8 @@
     <textarea [(ngModel)]="messageItem.comment" placeholder="Blah blah blah..."></textarea>
   </label>
 
+  <food-truc></food-truc>
+
   <div *ngIf="messageItem.comment && messageItem.comment.length >= 10">
     <button (click)="showFeedback()">Submit</button>
   </div>
